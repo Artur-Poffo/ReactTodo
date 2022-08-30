@@ -1,38 +1,131 @@
-.App {
+* {
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.ModalContainer {
+  width: 100vw;
+  height: 100vh;
+  background-color: #2727274d;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hide {
+  display: none;
+}
+
+.card {
+  width: auto;
+  height: auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 10px 10px 150px #272727;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 120px;
+}
+
+h1 {
+  font-weight: bold;
+  letter-spacing: 1px;
   text-align: center;
+  margin-top: 40px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.addTask {
+  width: 40px;
+  height: 40px;
+  background-color: rgb(42, 245, 211);
+  color: white;
+  font-size: 2rem;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all .5s ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.addTask:hover {
+  transform: scale(1.1);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+form input[type="text"] {
+  padding: 7px;
+  border: 1px solid gray;
+}
+
+form input[type="submit"] {
+  padding: 7px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all .5s ease;
+}
+
+form input[type="submit"]:hover {
+  background-color: #272727;
+  color: #eee;
+}
+
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.tasks {
+  margin-top: 40px;
+  list-style: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btns {
+  display: flex;
+  gap: 10px;
+}
+
+.tasks li {
+  width: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #272727;
+  color: #eee;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  transition: all .7s ease;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+#TaskCompletedBTN, #TaskDeletedBTN {
+  padding: 7px;
+  color: #eee;
+  background-color: rgb(59, 204, 22);
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#TaskDeletedBTN {
+  background-color: crimson;
 }
